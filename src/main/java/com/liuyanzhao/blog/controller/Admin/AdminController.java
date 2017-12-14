@@ -27,6 +27,8 @@ import java.util.Map;
 
 import static com.liuyanzhao.blog.util.Functions.getIpAddr;
 
+
+
 @Controller
 public class AdminController {
     @Autowired

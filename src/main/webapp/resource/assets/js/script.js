@@ -91,6 +91,23 @@ $("#weixin_btn").click(function () {
     });
 });
 
+//qq二维码
+$("#qq_btn").click(function () {
+    layer.open({
+        type: 1,
+        title: false,
+        closeBtn: 0,
+        area: '516px',
+        skin: 'layui-layer-nobg', //没有背景色
+        shadeClose: true,
+        content: $('#qq_code'),
+        end:function () {
+            $("#qq_code").attr("style","display:none;")
+        }
+    });
+});
+
+
 //获取相对路径
 // function  getPath(){
 //     var pathName = document.location.pathname;

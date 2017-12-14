@@ -170,7 +170,15 @@ public class ArticleServiceImpl implements ArticleService {
 			page = new Page(totalCount, 1,pageSize);
 			articleCustomList = articleMapperCustom.listArticleByPage(status,page.getStartPos(), pageSize);
 		}
-		
+		/*
+		   为没有指定文章图片缩略图的文章在图库中找到一张图片
+		 */
+		for(ArticleCustom articleCustom:articleCustomList){
+			if(null == articleCustom.getArticleImg() || "".equals(articleCustom.getArticleImg())){
+				articleCustom.setArticleImg("/img/thumbnail/random/img_" + String.valueOf(articleCustom.getArticleId() % 400) + ".jpg");
+			}
+		}
+
 		//获得分类信息
 		for(int i=0;i<articleCustomList.size();i++) {
 			ArticleListVo articleListVo = new ArticleListVo();

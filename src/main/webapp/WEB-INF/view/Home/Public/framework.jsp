@@ -63,7 +63,7 @@
             float: left;
         }
 
-      #list img {
+        #list img {
             float: left;
             width: 0;
         }
@@ -132,6 +132,22 @@
 
         #next {
             right: 20px;
+        }
+
+
+        .image-package {
+            padding-bottom: 15px;
+            margin: 0;
+            text-align: center;
+        }
+        .image-package>img{
+            margin: auto;
+        }
+        .image-caption {
+            font-size: 14px;
+            color: #969696;
+            line-height: 1.7;
+            text-align: center;
         }
     </style>
     <script type="text/javascript">

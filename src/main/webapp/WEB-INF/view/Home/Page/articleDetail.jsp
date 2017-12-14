@@ -74,9 +74,9 @@
                             <li><img src="/img/weixin.jpg"></li>
                         </ul>
                         <ul class="weimg2">
-                            <li><strong>博客交流群</strong></li>
-                            <li>海纳百川，大家来水</li>
-                            <li><img src="/img/qqGroup.jpg" alt="weinxin"></li>
+                            <li><strong>QQ</strong></li>
+                            <li>扫一扫，加我QQ！</li>
+                            <li><img src="/img/qq.jpg" alt="weinxin"></li>
                         </ul>
                         <div class="clear"></div>
                     </div>

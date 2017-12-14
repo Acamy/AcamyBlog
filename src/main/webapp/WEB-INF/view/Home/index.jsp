@@ -77,8 +77,7 @@
 
                         <figure class="thumbnail">
                             <a href="/article/${a.articleCustom.articleId}">
-                                <img width="280" height="210"
-                                     src="/img/thumbnail/random/img_${a.articleCustom.articleId%400}.jpg"
+                                <img style="width:280px;height:150px" src="${a.articleCustom.articleImg}"
                                      class="attachment-content size-content wp-post-image"
                                      alt="${a.articleCustom.articleTitle}">
                             </a>

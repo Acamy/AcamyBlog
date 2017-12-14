@@ -37,6 +37,12 @@
                         </a>
                     </li>
                     <li class="tqq">
+                        <!--a title="QQ" id="qq_btn" rel="external nofollow">
+                            <i class="fa fa-qq"> </i>
+                            <div id="qq_code" class="hide" >
+                                <img src="/img/qq.jpg" alt="">
+                            </div>
+                        </a-->
                         <a target="blank" rel="external nofollow"
                            href="http://wpa.qq.com/msgrd?V=3&amp;uin=${options.optionAboutsiteQq}&amp;Site=QQ&amp;Menu=yes"
                            title="QQ在线">

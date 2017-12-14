@@ -33,6 +33,18 @@ public class Article {
 
     private String articleContent;
 
+    private String articleImg;
+
+    public String getArticleImg() {
+        return articleImg;
+    }
+
+    public void setArticleImg(String articleImg) {
+        this.articleImg = articleImg;
+    }
+
+
+
     public Integer getArticleId() {
         return articleId;
     }

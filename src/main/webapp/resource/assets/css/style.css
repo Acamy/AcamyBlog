@@ -7480,7 +7480,7 @@ li.search-inf {
     display: none;
 }
 
-#weixin_btn,.applyLink {
+#weixin_btn,#qq_btn,.applyLink {
     cursor: pointer;
 }
 

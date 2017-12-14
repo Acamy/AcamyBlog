@@ -5,6 +5,7 @@
     <id column="article_id" property="articleId" jdbcType="INTEGER" />
     <result column="article_user_id" property="articleUserId" jdbcType="INTEGER" />
     <result column="article_title" property="articleTitle" jdbcType="VARCHAR" />
+    <result column="article_img" property="articleImg" jdbcType="VARCHAR" />
     <result column="article_parent_category_id" property="articleParentCategoryId" jdbcType="INTEGER" />
     <result column="article_child_category_id" property="articleChildCategoryId" jdbcType="INTEGER" />
     <result column="article_tag_ids" property="articleTagIds" jdbcType="VARCHAR" />
@@ -21,7 +22,7 @@
     <result column="article_content" property="articleContent" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    article_id, article_user_id, article_title, article_parent_category_id, article_child_category_id, 
+    article_id, article_user_id, article_title, article_img,article_parent_category_id, article_child_category_id,
     article_tag_ids, article_view_count, article_comment_count, article_like_count, article_post_time, 
     article_update_time, article_is_comment, article_status, article_order
   </sql>

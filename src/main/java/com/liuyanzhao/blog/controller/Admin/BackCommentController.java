@@ -20,6 +20,9 @@ import java.util.Date;
 import java.util.List;
 
 
+/**
+ * @author Hebh
+ */
 @Controller
 @RequestMapping("/admin/comment")
 public class BackCommentController {
