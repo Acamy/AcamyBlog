@@ -29,18 +29,7 @@
         <div id="primary" class="content-area">
 
             <main id="main" class="site-main" role="main">
-
-                <!--div id="slideshow" class="wow fadeInUp" data-wow-delay="0.3s">
-                    <ul class="rslides" id="slider">
-                        <li> <a href="/aboutSite"
-                                target="_blank" rel="external nofollow">
-                            <img src="/img/lunboImg/1.jpg"
-                                 alt="Welcome to the blog of Acamy!"></a>
-                            <p class="slider-caption">Welcome to the blog of Hebh!</p>
-                        </li>
-                    </ul>
-                </div-->
-
+                <!--首页图片轮播-->
                 <div id="container">
                     <div id="list">
                         <div class="selected"> <a href="/aboutSite"
@@ -71,13 +60,14 @@
                     <a href="javascript:;" id="next" class="arrow">&gt;</a>
                 </div>
 
+                <!--拉取文章列表-->
                 <c:forEach items="${articleListVoList}" var="a">
 
                     <article  class="post type-post">
 
                         <figure class="thumbnail">
                             <a href="/article/${a.articleCustom.articleId}">
-                                <img style="width:280px;height:150px" src="${a.articleCustom.articleImg}"
+                                <img src="${a.articleCustom.articleImg}"
                                      class="attachment-content size-content wp-post-image"
                                      alt="${a.articleCustom.articleTitle}">
                             </a>
@@ -102,56 +92,59 @@
                                 <lyz:htmlFilter>${a.articleCustom.articleContent}</lyz:htmlFilter>......
                             </div>
                             <span class="title-l"></span>
+
+                            <!--NEW标签-->
                             <span class="new-icon">
-                                    <c:choose>
-                                        <c:when test="${a.articleCustom.articleStatus==2}">
-                                            <i class="fa fa-bookmark-o"></i>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <jsp:useBean id="nowDate" class="java.util.Date"/>
-                                            <c:set var="interval"
-                                                   value="${nowDate.time - a.articleCustom.articlePostTime.time}"/><%--时间差毫秒数--%>
-                                            <fmt:formatNumber value="${interval/1000/60/60/24}" pattern="#0"
-                                                              var="days"/>
-                                            <c:if test="${days <= 7}">NEW</c:if>
-                                        </c:otherwise>
-                                    </c:choose>
+                                <c:choose>
+                                    <c:when test="${a.articleCustom.articleStatus==2}">
+                                        <i class="fa fa-bookmark-o"></i>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <jsp:useBean id="nowDate" class="java.util.Date"/>
+                                        <c:set var="interval"
+                                               value="${nowDate.time - a.articleCustom.articlePostTime.time}"/><%--时间差毫秒数--%>
+                                        <fmt:formatNumber value="${interval/1000/60/60/24}" pattern="#0"
+                                                          var="days"/>
+                                        <c:if test="${days <= 7}">NEW</c:if>
+                                    </c:otherwise>
+                                </c:choose>
+                            </span>
 
-
-                                </span>
+                            <!--元数据，发表日期，浏览数，评论-->
                             <span class="entry-meta">
-                                    <span class="date">
-                                        <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy年MM月dd日"/>
-                                    &nbsp;&nbsp;
-                                    </span>
-                                    <span class="views">
-                                        <i class="fa fa-eye"></i>
-                                            ${a.articleCustom.articleViewCount} views
-                                    </span>
-                                    <span class="comment">&nbsp;&nbsp;
-                                        <a href="/article/${a.articleCustom.articleId}#comments" rel="external nofollow">
-                                          <i class="fa fa-comment-o"></i>
-                                            <c:choose>
-                                                <c:when test="${a.articleCustom.articleCommentCount==0}">
-                                                    发表评论
-                                                </c:when>
-                                                <c:otherwise>
-                                                    ${a.articleCustom.articleCommentCount}
-                                                </c:otherwise>
-                                            </c:choose>
-
-                                        </a>
-                                    </span>
+                                <span class="date">
+                                    <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy年MM月dd日"/>
+                                &nbsp;&nbsp;
                                 </span>
+                                <span class="views">
+                                    <i class="fa fa-eye"></i>
+                                        ${a.articleCustom.articleViewCount} views
+                                </span>
+                                <span class="comment">&nbsp;&nbsp;
+                                    <a href="/article/${a.articleCustom.articleId}#comments" rel="external nofollow">
+                                      <i class="fa fa-comment-o"></i>
+                                        <c:choose>
+                                            <c:when test="${a.articleCustom.articleCommentCount==0}">
+                                                发表评论
+                                            </c:when>
+                                            <c:otherwise>
+                                                ${a.articleCustom.articleCommentCount}
+                                            </c:otherwise>
+                                        </c:choose>
+
+                                    </a>
+                                </span>
+                            </span>
+
                             <div class="clear"></div>
                         </div><!-- .entry-content -->
 
                         <span class="entry-more">
-                                <a href="/article/${a.articleCustom.articleId}"
-                                   rel="bookmark">
-                                    阅读全文
-                                </a>
-                            </span>
+                            <a href="/article/${a.articleCustom.articleId}"
+                               rel="bookmark">
+                                阅读全文
+                            </a>
+                        </span>
                     </article>
                 </c:forEach>
             </main>
