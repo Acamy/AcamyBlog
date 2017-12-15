@@ -3,12 +3,14 @@ package com.liuyanzhao.blog.controller.Home;
 import com.liuyanzhao.blog.entity.custom.*;
 import com.liuyanzhao.blog.service.*;
 
+import com.liuyanzhao.blog.util.others.WebUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -26,6 +28,9 @@ public class IndexController {
 
 	@Autowired
 	private NoticeService noticeService;
+
+	@Autowired
+	private HttpServletRequest request;
 	
 	@ModelAttribute
 	public void init(Model model)  throws Exception {
@@ -41,6 +46,8 @@ public class IndexController {
 	//首页显示
 	@RequestMapping("/")
 	public ModelAndView IndexView() throws Exception {
+		System.out.println(WebUtil.getIpAddr(request));
+
 		ModelAndView modelAndView = new ModelAndView();
 		//文章列表
 		int pageSize = 10;
