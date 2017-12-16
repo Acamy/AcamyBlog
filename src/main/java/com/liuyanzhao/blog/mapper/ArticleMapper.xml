@@ -161,6 +161,9 @@
       <if test="articleTitle != null" >
         article_title = #{articleTitle,jdbcType=VARCHAR},
       </if>
+      <if test="articleImg != null">
+        article_img = #{articleImg,jdbcType=VARCHAR},
+      </if>
       <if test="articleParentCategoryId != null" >
         article_parent_category_id = #{articleParentCategoryId,jdbcType=INTEGER},
       </if>
@@ -204,6 +207,7 @@
     update article
     set article_user_id = #{articleUserId,jdbcType=INTEGER},
       article_title = #{articleTitle,jdbcType=VARCHAR},
+      article_img = #{articleImg,jdbcType=VARCHAR},
       article_parent_category_id = #{articleParentCategoryId,jdbcType=INTEGER},
       article_child_category_id = #{articleChildCategoryId,jdbcType=INTEGER},
       article_tag_ids = #{articleTagIds,jdbcType=VARCHAR},
@@ -222,6 +226,7 @@
     update article
     set article_user_id = #{articleUserId,jdbcType=INTEGER},
       article_title = #{articleTitle,jdbcType=VARCHAR},
+      article_img = #{articleImg,jdbcType=VARCHAR},
       article_parent_category_id = #{articleParentCategoryId,jdbcType=INTEGER},
       article_child_category_id = #{articleChildCategoryId,jdbcType=INTEGER},
       article_tag_ids = #{articleTagIds,jdbcType=VARCHAR},

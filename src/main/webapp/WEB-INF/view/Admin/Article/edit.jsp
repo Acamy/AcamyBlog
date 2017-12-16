@@ -40,6 +40,13 @@
             </div>
         </div>
 
+        <div class="layui-form-item">
+            <label class="layui-form-label">缩略图  </label>
+            <div class="layui-input-block">
+                <input type="text" name="articleImg"  id="articleImg" value="${articleCustom.articleImg}" class="layui-input">
+            </div>
+        </div>
+
 
         <div class="layui-form-item">
             <label class="layui-form-label">分类  <span style="color: #FF5722; ">*</span></label>

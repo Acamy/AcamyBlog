@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -46,7 +48,10 @@ public class IndexController {
 	//首页显示
 	@RequestMapping("/")
 	public ModelAndView IndexView() throws Exception {
-		System.out.println(WebUtil.getIpAddr(request));
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+		System.out.print("Visitor:" + df.format(new Date()) + " ");// new Date()为获取当前系统时间
+
+		System.out.println(WebUtil.getIpAddr2(request));
 
 		ModelAndView modelAndView = new ModelAndView();
 		//文章列表
